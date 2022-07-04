@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Sequence" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="739.2,2164" sap2010:WorkflowViewState.IdRef="Sequence_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/cv" xmlns:p1="http://schemas.uipath.com/workflow/activities/ocr" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:uc="clr-namespace:UiPath.CV;assembly=UiPath.CV" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Sequence" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="739.2,1953.6" sap2010:WorkflowViewState.IdRef="Sequence_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/cv" xmlns:p1="http://schemas.uipath.com/workflow/activities/ocr" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:uc="clr-namespace:UiPath.CV;assembly=UiPath.CV" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -40,6 +40,8 @@
       <x:String>UiPath.OCR.Contracts.Activities</x:String>
       <x:String>UiPath.Core.Activities.OCR.Engines</x:String>
       <x:String>UiPath.CV.Activities.Interfaces</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -83,7 +85,7 @@
       <AssemblyReference>NPOI</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="475.2,1888.8" sap2010:WorkflowViewState.IdRef="Sequence_12">
+  <Sequence sap:VirtualizedContainerService.HintSize="475.2,1928.8" sap2010:WorkflowViewState.IdRef="Sequence_12">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -139,7 +141,7 @@
         </ui:Target>
       </ui:ClickImage.Target>
     </ui:ClickImage>
-    <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" CvMethod="None" DesignTimeCacheId="706f0b66-9cff-4b42-98fc-032088f9cfc7" DisplayName="CV Screen Scope 'wfica32.exe Gestion'" sap:VirtualizedContainerService.HintSize="433.6,1404" sap2010:WorkflowViewState.IdRef="CVScope_1" Version="V5">
+    <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" CvMethod="None" DesignTimeCacheId="706f0b66-9cff-4b42-98fc-032088f9cfc7" DisplayName="CV Screen Scope 'wfica32.exe Gestion'" sap:VirtualizedContainerService.HintSize="433.6,1444" sap2010:WorkflowViewState.IdRef="CVScope_1" Version="V5">
       <p:CVScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -334,7 +336,7 @@
         <uc:CvCacheContainer>
           <uc:CvCacheContainer.Caches>
             <scg:List x:TypeArguments="uc:CVCache" Capacity="3">
-              <uc:CVCache OcrTexts="{x:Null}" DisplayName="Screen CV Type Into - 'Interme (Main)" Id="706f0b66-9cff-4b42-98fc-032088f9cfc7" InformativeScreenshot="20961e61924cc45588218adbcd7e3a17" LogicalPosition="-10, -10" Position="-10, -10" ScaleFactor="1.25" ScreenshotGuid="ef825150-0f80-4fc0-b9da-460531491f9c">
+              <uc:CVCache OcrTexts="{x:Null}" DisplayName="Screen CV Type Into - 'Interme (Main)" Id="706f0b66-9cff-4b42-98fc-032088f9cfc7" InformativeScreenshot="e310000849a7d3d9e39e02371947eccb" LogicalPosition="-10, -10" Position="-10, -10" ScaleFactor="1.25">
                 <uc:CVCache.CvAnchorRelations>
                   <scg:List x:TypeArguments="uc:AnchorRelationInfo" Capacity="0" />
                 </uc:CVCache.CvAnchorRelations>
