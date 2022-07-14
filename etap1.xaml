@@ -1,14 +1,15 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="Read_File_EXcel" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/cv" xmlns:p1="http://schemas.uipath.com/workflow/activities/ocr" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:sd1="clr-namespace:System.Data;assembly=System.Data" xmlns:uc="clr-namespace:UiPath.CV;assembly=UiPath.CV" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="Cheque" Type="OutArgument(x:Double)" />
-    <x:Property Name="RelS" Type="OutArgument(x:Double)" />
-    <x:Property Name="Soled" Type="OutArgument(x:Double)" />
     <x:Property Name="Out_Name" Type="OutArgument(x:String)" />
+    <x:Property Name="Out_Cheque" Type="OutArgument(x:Double)" />
+    <x:Property Name="Out_RelS" Type="OutArgument(x:Double)" />
+    <x:Property Name="Out_Soled" Type="OutArgument(x:Double)" />
+    <x:Property Name="IN_Code" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1098.4,3701.6</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1410.4,3701.6</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Read_File_EXcel_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="43">
@@ -115,7 +116,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ClickImage ClickType="CLICK_SINGLE" ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" DisplayName="Click Image 'wfica32.exe Gestion'" sap:VirtualizedContainerService.HintSize="475.2,156" sap2010:WorkflowViewState.IdRef="ClickImage_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="{x:Null}">
+    <ui:ClickImage ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Image 'wfica32.exe Gestion'" sap:VirtualizedContainerService.HintSize="475.2,156" sap2010:WorkflowViewState.IdRef="ClickImage_1" KeyModifiers="None" MouseButton="BTN_LEFT">
       <ui:ClickImage.CursorPosition>
         <ui:CursorPosition Position="Center">
           <ui:CursorPosition.OffsetX>
@@ -149,7 +150,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ClickImage>
-    <ui:ClickImage ClickType="CLICK_SINGLE" ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" DisplayName="Click Image 'wfica32.exe'" sap:VirtualizedContainerService.HintSize="475.2,52.8" sap2010:WorkflowViewState.IdRef="ClickImage_2" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="{x:Null}">
+    <ui:ClickImage ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Image 'wfica32.exe'" sap:VirtualizedContainerService.HintSize="475.2,52.8" sap2010:WorkflowViewState.IdRef="ClickImage_2" KeyModifiers="None" MouseButton="BTN_LEFT">
       <ui:ClickImage.CursorPosition>
         <ui:CursorPosition Position="Center">
           <ui:CursorPosition.OffsetX>
@@ -180,7 +181,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ClickImage>
-    <p:CVScope ApiKey="{x:Null}" ContinueOnError="{x:Null}" CvMethod="ElementDetection, OCR" DelayBefore="{x:Null}" DesignTimeCacheId="89ddbf6a-2566-43fb-84ce-f39f17cc2681" DisplayName="CV Screen Scope 'wfica32.exe Gestion'" sap:VirtualizedContainerService.HintSize="475.2,1452.8" sap2010:WorkflowViewState.IdRef="CVScope_1" Server="{x:Null}" TimeoutMS="{x:Null}" Version="V5">
+    <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="89ddbf6a-2566-43fb-84ce-f39f17cc2681" DisplayName="CV Screen Scope 'wfica32.exe Gestion'" sap:VirtualizedContainerService.HintSize="475.2,1452.8" sap2010:WorkflowViewState.IdRef="CVScope_1" Version="V5">
       <p:CVScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -192,7 +193,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <p:CvTypeIntoWithDescriptor Activate="True" ClickBeforeTyping="True" ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Descriptor="[&quot;Target: InputBox (120,196,73,22)&quot; +&#xA;&quot;Anchor: Text 'Intermediaire:' (36,201,76,11)&quot; +&#xA;&quot;Anchor: Icon (196,198,18,18)&quot; +&#xA;&quot;Anchor: Text 'Sous Branche' (32,166,76,11)&quot;]" DeselectAfter="{x:Null}" DesignTimeCacheId="89ddbf6a-2566-43fb-84ce-f39f17cc2681" DesignTimeScaleFactor="1.25" DisplayName="CV Type Into - InputBox" EmptyField="False" sap:VirtualizedContainerService.HintSize="400,186.4" sap2010:WorkflowViewState.IdRef="CvTypeIntoWithDescriptor_2" InRegion="{x:Null}" InformativeScreenshot="92b8da887048950c2074229b6da30f01" OutRegion="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Text="[&quot;132&quot;]" TimeoutMS="{x:Null}" Version="V5">
+            <p:CvTypeIntoWithDescriptor DeselectAfter="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" Descriptor="[&quot;Target: InputBox (120,196,73,22)&quot; +&#xA;&quot;Anchor: Text 'Intermediaire:' (36,201,76,11)&quot; +&#xA;&quot;Anchor: Icon (196,198,18,18)&quot; +&#xA;&quot;Anchor: Text 'Sous Branche' (32,166,76,11)&quot;]" DesignTimeCacheId="89ddbf6a-2566-43fb-84ce-f39f17cc2681" DesignTimeScaleFactor="1.25" DisplayName="CV Type Into - InputBox" EmptyField="False" sap:VirtualizedContainerService.HintSize="400,186.4" sap2010:WorkflowViewState.IdRef="CvTypeIntoWithDescriptor_2" InformativeScreenshot="92b8da887048950c2074229b6da30f01" Text="[IN_Code]" Version="V5">
               <p:CvTypeIntoWithDescriptor.DesignTimeDescriptor>
                 <uc:CvDescriptor Id="05c73a17-84f9-4766-aa92-7eddd2c2434b">
                   <uc:CvDescriptor.Anchors>
@@ -218,7 +219,7 @@
                 </ui:Target>
               </p:CvTypeIntoWithDescriptor.Target>
             </p:CvTypeIntoWithDescriptor>
-            <p:CvClickWithDescriptor ClickType="CLICK_SINGLE" ContinueOnError="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" Descriptor="[&quot;Target: Icon (196,198,18,18)&quot;]" DesignTimeCacheId="89ddbf6a-2566-43fb-84ce-f39f17cc2681" DesignTimeScaleFactor="1.25" DisplayName="CV Click - Icon" sap:VirtualizedContainerService.HintSize="400,137.6" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_1" InRegion="{x:Null}" InformativeScreenshot="3ccf53124c111dbc3621d5071d609238" KeyModifiers="None" MouseButton="BTN_LEFT" OutRegion="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" TimeoutMS="{x:Null}" Version="V5">
+            <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Icon (196,198,18,18)&quot;]" DesignTimeCacheId="89ddbf6a-2566-43fb-84ce-f39f17cc2681" DesignTimeScaleFactor="1.25" DisplayName="CV Click - Icon" sap:VirtualizedContainerService.HintSize="400,137.6" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_1" InformativeScreenshot="3ccf53124c111dbc3621d5071d609238" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V5">
               <p:CvClickWithDescriptor.CursorPosition>
                 <ui:CursorPosition Position="Center">
                   <ui:CursorPosition.OffsetX>
@@ -247,7 +248,7 @@
                 </ui:Target>
               </p:CvClickWithDescriptor.Target>
             </p:CvClickWithDescriptor>
-            <p:CvTypeIntoWithDescriptor Activate="True" ClickBeforeTyping="True" ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Descriptor="[&quot;Target: InputBox (121,232,72,20)&quot; +&#xA;&quot;Anchor: Text 'Emission Du:' (42,238,71,11)&quot; +&#xA;&quot;Anchor: Text 'Intermediaire:' (36,201,76,11)&quot; +&#xA;&quot;Anchor: Text 'N° Contrat:' (50,265,63,11)&quot;]" DeselectAfter="{x:Null}" DesignTimeCacheId="89ddbf6a-2566-43fb-84ce-f39f17cc2681" DesignTimeScaleFactor="1.25" DisplayName="CV Type Into - InputBox" EmptyField="True" sap:VirtualizedContainerService.HintSize="400,186.4" sap2010:WorkflowViewState.IdRef="CvTypeIntoWithDescriptor_3" InRegion="{x:Null}" InformativeScreenshot="16728d9903b08a47b91e397bc8861308" OutRegion="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Text="[&quot;012000&quot;]" TimeoutMS="{x:Null}" Version="V5">
+            <p:CvTypeIntoWithDescriptor DeselectAfter="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" Descriptor="[&quot;Target: InputBox (121,232,72,20)&quot; +&#xA;&quot;Anchor: Text 'Emission Du:' (42,238,71,11)&quot; +&#xA;&quot;Anchor: Text 'Intermediaire:' (36,201,76,11)&quot; +&#xA;&quot;Anchor: Text 'N° Contrat:' (50,265,63,11)&quot;]" DesignTimeCacheId="89ddbf6a-2566-43fb-84ce-f39f17cc2681" DesignTimeScaleFactor="1.25" DisplayName="CV Type Into - InputBox" EmptyField="True" sap:VirtualizedContainerService.HintSize="400,186.4" sap2010:WorkflowViewState.IdRef="CvTypeIntoWithDescriptor_3" InformativeScreenshot="16728d9903b08a47b91e397bc8861308" Text="[&quot;012000&quot;]" Version="V5">
               <p:CvTypeIntoWithDescriptor.DesignTimeDescriptor>
                 <uc:CvDescriptor Id="f73134a7-321b-4469-96ea-b65eafbcc191">
                   <uc:CvDescriptor.Anchors>
@@ -273,7 +274,7 @@
                 </ui:Target>
               </p:CvTypeIntoWithDescriptor.Target>
             </p:CvTypeIntoWithDescriptor>
-            <p:CvTypeIntoWithDescriptor Activate="True" ClickBeforeTyping="True" ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Descriptor="[&quot;Target: InputBox (329,233,76,20)&quot; +&#xA;&quot;Anchor: Text 'Emission Au :' (249,238,72,11)&quot;]" DeselectAfter="{x:Null}" DesignTimeCacheId="89ddbf6a-2566-43fb-84ce-f39f17cc2681" DesignTimeScaleFactor="1.25" DisplayName="CV Type Into - InputBox" EmptyField="True" sap:VirtualizedContainerService.HintSize="400,186.4" sap2010:WorkflowViewState.IdRef="CvTypeIntoWithDescriptor_4" InRegion="{x:Null}" InformativeScreenshot="9e6e9d17c37d258f9b7f16953f5b674a" OutRegion="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Text="[&quot;012022&quot;]" TimeoutMS="{x:Null}" Version="V5">
+            <p:CvTypeIntoWithDescriptor DeselectAfter="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" Descriptor="[&quot;Target: InputBox (329,233,76,20)&quot; +&#xA;&quot;Anchor: Text 'Emission Au :' (249,238,72,11)&quot;]" DesignTimeCacheId="89ddbf6a-2566-43fb-84ce-f39f17cc2681" DesignTimeScaleFactor="1.25" DisplayName="CV Type Into - InputBox" EmptyField="True" sap:VirtualizedContainerService.HintSize="400,186.4" sap2010:WorkflowViewState.IdRef="CvTypeIntoWithDescriptor_4" InformativeScreenshot="9e6e9d17c37d258f9b7f16953f5b674a" Text="[&quot;012022&quot;]" Version="V5">
               <p:CvTypeIntoWithDescriptor.DesignTimeDescriptor>
                 <uc:CvDescriptor Id="dee04a50-0e5d-4f75-ac9f-e210e59cca53">
                   <uc:CvDescriptor.Anchors>
@@ -297,7 +298,7 @@
                 </ui:Target>
               </p:CvTypeIntoWithDescriptor.Target>
             </p:CvTypeIntoWithDescriptor>
-            <p:CvTypeIntoWithDescriptor Activate="True" ClickBeforeTyping="True" ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Descriptor="[&quot;Target: InputBox (489,233,72,21)&quot; +&#xA;&quot;Anchor: Text 'Vu Au :' (434,238,39,11)&quot;]" DeselectAfter="{x:Null}" DesignTimeCacheId="89ddbf6a-2566-43fb-84ce-f39f17cc2681" DesignTimeScaleFactor="1.25" DisplayName="CV Type Into - InputBox" EmptyField="True" sap:VirtualizedContainerService.HintSize="400,186.4" sap2010:WorkflowViewState.IdRef="CvTypeIntoWithDescriptor_5" InRegion="{x:Null}" InformativeScreenshot="236cc4f4d16f0e39b95966d109aad67a" OutRegion="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Text="[&quot;072022&quot;]" TimeoutMS="{x:Null}" Version="V5">
+            <p:CvTypeIntoWithDescriptor DeselectAfter="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" Descriptor="[&quot;Target: InputBox (489,233,72,21)&quot; +&#xA;&quot;Anchor: Text 'Vu Au :' (434,238,39,11)&quot;]" DesignTimeCacheId="89ddbf6a-2566-43fb-84ce-f39f17cc2681" DesignTimeScaleFactor="1.25" DisplayName="CV Type Into - InputBox" EmptyField="True" sap:VirtualizedContainerService.HintSize="400,186.4" sap2010:WorkflowViewState.IdRef="CvTypeIntoWithDescriptor_5" InformativeScreenshot="236cc4f4d16f0e39b95966d109aad67a" Text="[&quot;072022&quot;]" Version="V5">
               <p:CvTypeIntoWithDescriptor.DesignTimeDescriptor>
                 <uc:CvDescriptor Id="8afdd6cb-b7d3-41ba-a1df-547e4cd26577">
                   <uc:CvDescriptor.Anchors>
@@ -321,7 +322,7 @@
                 </ui:Target>
               </p:CvTypeIntoWithDescriptor.Target>
             </p:CvTypeIntoWithDescriptor>
-            <p:CvClickWithDescriptor ClickType="CLICK_SINGLE" ContinueOnError="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" Descriptor="[&quot;Target: Button (0,46,60,40)&quot; +&#xA;&quot;Anchor: Text 'Afficher' (9,69,44,13)&quot;]" DesignTimeCacheId="89ddbf6a-2566-43fb-84ce-f39f17cc2681" DesignTimeScaleFactor="1.25" DisplayName="CV Click - Button" sap:VirtualizedContainerService.HintSize="400,137.6" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_2" InRegion="{x:Null}" InformativeScreenshot="a4a823e418364359733ac2f29ff815b7" KeyModifiers="None" MouseButton="BTN_LEFT" OutRegion="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" TimeoutMS="{x:Null}" Version="V5">
+            <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Button (0,46,60,40)&quot; +&#xA;&quot;Anchor: Text 'Afficher' (9,69,44,13)&quot;]" DesignTimeCacheId="89ddbf6a-2566-43fb-84ce-f39f17cc2681" DesignTimeScaleFactor="1.25" DisplayName="CV Click - Button" sap:VirtualizedContainerService.HintSize="400,137.6" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_2" InformativeScreenshot="a4a823e418364359733ac2f29ff815b7" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V5">
               <p:CvClickWithDescriptor.CursorPosition>
                 <ui:CursorPosition Position="Center">
                   <ui:CursorPosition.OffsetX>
@@ -678,7 +679,7 @@
           <ActivityFunc.Argument>
             <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
           </ActivityFunc.Argument>
-          <p1:UiPathScreenOCR ApiKey="{x:Null}" ComputeSkewAngle="False" Endpoint="{x:Null}" ExtractWords="True" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="UiPathScreenOCR_1" Image="[Image]" Language="en" Output="{x:Null}" Profile="Screen" Result="{x:Null}" Scale="1" Text="{x:Null}" Timeout="100000" UseLocalServer="{x:Null}" />
+          <p1:UiPathScreenOCR ApiKey="{x:Null}" Endpoint="{x:Null}" Output="{x:Null}" Text="{x:Null}" UseLocalServer="{x:Null}" ComputeSkewAngle="False" ExtractWords="True" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="UiPathScreenOCR_1" Image="[Image]" Language="en" Profile="Screen" Scale="1" Timeout="100000" />
         </ActivityFunc>
       </p:CVScope.OCREngine>
       <p:CVScope.Target>
@@ -705,7 +706,7 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <p:CVScope ApiKey="{x:Null}" ContinueOnError="{x:Null}" CvMethod="ElementDetection, OCR" DelayBefore="{x:Null}" DesignTimeCacheId="ebeb6880-26b0-4a34-9049-02eb68bab375" DisplayName="CV Screen Scope 'wfica32.exe Gestion'" sap:VirtualizedContainerService.HintSize="433.6,758.4" sap2010:WorkflowViewState.IdRef="CVScope_6" Server="{x:Null}" TimeoutMS="{x:Null}" Version="V5">
+      <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="ebeb6880-26b0-4a34-9049-02eb68bab375" DisplayName="CV Screen Scope 'wfica32.exe Gestion'" sap:VirtualizedContainerService.HintSize="433.6,758.4" sap2010:WorkflowViewState.IdRef="CVScope_6" Version="V5">
         <p:CVScope.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
@@ -720,7 +721,7 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <p:CvGetTextWithDescriptor ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" Descriptor="[&quot;Target: InputBox (220,197,352,24)&quot; +&#xA;&quot;Anchor: Text 'Intermediaire:' (36,201,76,11)&quot;]" DesignTimeCacheId="ebeb6880-26b0-4a34-9049-02eb68bab375" DesignTimeScaleFactor="1.25" DisplayName="CV Get Text - InputBox" sap:VirtualizedContainerService.HintSize="400,168" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_1" InRegion="{x:Null}" InformativeScreenshot="bf62df0d9dd353984bfa386f9703bb4c" OutRegion="{x:Null}" RefreshBefore="True" Result="[Out_Name]" TimeoutMS="{x:Null}" Version="V5">
+              <p:CvGetTextWithDescriptor Descriptor="[&quot;Target: InputBox (220,197,352,24)&quot; +&#xA;&quot;Anchor: Text 'Intermediaire:' (36,201,76,11)&quot;]" DesignTimeCacheId="ebeb6880-26b0-4a34-9049-02eb68bab375" DesignTimeScaleFactor="1.25" DisplayName="CV Get Text - InputBox" sap:VirtualizedContainerService.HintSize="400,168" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_1" InformativeScreenshot="bf62df0d9dd353984bfa386f9703bb4c" RefreshBefore="True" Result="[Out_Name]" Version="V5">
                 <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
                   <uc:CvDescriptor Id="7f621d93-b550-4c6a-895d-dd12e83c88a0">
                     <uc:CvDescriptor.Anchors>
@@ -735,7 +736,7 @@
                 </p:CvGetTextWithDescriptor.DesignTimeDescriptor>
               </p:CvGetTextWithDescriptor>
               <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="400,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[Out_Name]" />
-              <p:CvExtractDataTableWithDescriptor AddHeaders="True" ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" DelayScreenshotAfterScroll="250" Descriptor="[&quot;Target: Table (8,355,1474,97)&quot;]" DesignTimeCacheId="ebeb6880-26b0-4a34-9049-02eb68bab375" DesignTimeScaleFactor="1.25" DisplayName="CV Extract Table - Table" sap:VirtualizedContainerService.HintSize="400,137.6" sap2010:WorkflowViewState.IdRef="CvExtractDataTableWithDescriptor_3" IgnoreEmptyRows="False" InRegion="{x:Null}" InformativeScreenshot="5b69327b05b9ce564276010fe99b9d36" MaxTableScrollHeightInPixels="30000" OutRegion="{x:Null}" RefreshBefore="True" Result="[TableA]" Scroll="False" TimeoutMS="{x:Null}" Version="V5">
+              <p:CvExtractDataTableWithDescriptor InRegion="{x:Null}" AddHeaders="True" DelayScreenshotAfterScroll="250" Descriptor="[&quot;Target: Table (8,355,1474,97)&quot;]" DesignTimeCacheId="ebeb6880-26b0-4a34-9049-02eb68bab375" DesignTimeScaleFactor="1.25" DisplayName="CV Extract Table - Table" sap:VirtualizedContainerService.HintSize="400,137.6" sap2010:WorkflowViewState.IdRef="CvExtractDataTableWithDescriptor_3" IgnoreEmptyRows="False" InformativeScreenshot="5b69327b05b9ce564276010fe99b9d36" MaxTableScrollHeightInPixels="30000" RefreshBefore="True" Result="[TableA]" Scroll="False" Version="V5">
                 <p:CvExtractDataTableWithDescriptor.DesignTimeDescriptor>
                   <uc:CvDescriptor Id="c9201787-321e-4790-be74-cbe7f74a68f2">
                     <uc:CvDescriptor.Target>
@@ -1313,7 +1314,7 @@
             <ActivityFunc.Argument>
               <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
             </ActivityFunc.Argument>
-            <p1:UiPathScreenOCR ApiKey="{x:Null}" ComputeSkewAngle="False" Endpoint="{x:Null}" ExtractWords="True" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="UiPathScreenOCR_2" Image="[Image]" Language="en" Output="{x:Null}" Profile="Screen" Result="{x:Null}" Scale="1" Text="{x:Null}" Timeout="100000" UseLocalServer="{x:Null}" />
+            <p1:UiPathScreenOCR ApiKey="{x:Null}" Endpoint="{x:Null}" Output="{x:Null}" Text="{x:Null}" UseLocalServer="{x:Null}" ComputeSkewAngle="False" ExtractWords="True" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="UiPathScreenOCR_2" Image="[Image]" Language="en" Profile="Screen" Scale="1" Timeout="100000" />
           </ActivityFunc>
         </p:CVScope.OCREngine>
         <p:CVScope.Target>
@@ -1358,7 +1359,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:FilterDataTable>
-      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[TableA]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="433.6,668.8" sap2010:WorkflowViewState.IdRef="ForEachRow_1" Values="{x:Null}">
+      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[TableA]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="433.6,668.8" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
         <ui:ForEachRow.Body>
           <ActivityAction x:TypeArguments="sd1:DataRow">
             <ActivityAction.Argument>
@@ -1392,7 +1393,7 @@
               </Assign>
               <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_3">
                 <Assign.To>
-                  <OutArgument x:TypeArguments="x:Double">[Soled]</OutArgument>
+                  <OutArgument x:TypeArguments="x:Double">[Out_Soled]</OutArgument>
                 </Assign.To>
                 <Assign.Value>
                   <InArgument x:TypeArguments="x:Double">[(Convert.ToDouble( Encaissement)) - (Convert.ToDouble( Commission))]</InArgument>
@@ -1400,7 +1401,7 @@
               </Assign>
               <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_4">
                 <Assign.To>
-                  <OutArgument x:TypeArguments="x:Double">[RelS]</OutArgument>
+                  <OutArgument x:TypeArguments="x:Double">[Out_RelS]</OutArgument>
                 </Assign.To>
                 <Assign.Value>
                   <InArgument x:TypeArguments="x:Double" xml:space="preserve">[(Convert.ToDouble( Commission )) *  0.1]</InArgument>
@@ -1408,10 +1409,10 @@
               </Assign>
               <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_5">
                 <Assign.To>
-                  <OutArgument x:TypeArguments="x:Double">[Cheque]</OutArgument>
+                  <OutArgument x:TypeArguments="x:Double">[Out_Cheque]</OutArgument>
                 </Assign.To>
                 <Assign.Value>
-                  <InArgument x:TypeArguments="x:Double">[Soled + RelS]</InArgument>
+                  <InArgument x:TypeArguments="x:Double">[Out_Soled + Out_RelS]</InArgument>
                 </Assign.Value>
               </Assign>
             </Sequence>
