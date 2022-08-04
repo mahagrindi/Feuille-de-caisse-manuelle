@@ -1,0 +1,318 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="PDF_SCRAPING" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1060,2197.6" sap2010:WorkflowViewState.IdRef="PDF_SCRAPING_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/cv" xmlns:p1="http://schemas.uipath.com/workflow/activities/ocr" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:uc="clr-namespace:UiPath.CV;assembly=UiPath.CV" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="43">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.CV</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.Shared.ObjectLibrary</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.CV.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>UiPath.CV.Activities.Interfaces</x:String>
+      <x:String>UiPath.Vision.OCR</x:String>
+      <x:String>UiPath.OCR.Contracts</x:String>
+      <x:String>UiPath.OCR.Contracts.Activities</x:String>
+      <x:String>UiPath.Core.Activities.OCR.Engines</x:String>
+      <x:String>UiPath.Word</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
+      <x:String>UiPath.Word.Activities</x:String>
+      <x:String>UiPath.DocumentUnderstanding.Digitizer.Utils</x:String>
+      <x:String>UiPath.PDF.Activities</x:String>
+      <x:String>UiPath.OCR.Activities</x:String>
+      <x:String>UiPath.XPS.Activities</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="39">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.CV.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Citrix.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Word.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Word</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.DocumentUnderstanding.Digitizer</AssemblyReference>
+      <AssemblyReference>UiPath.PDF.Activities</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="PDF_SCRAPING" sap:VirtualizedContainerService.HintSize="475.2,2132.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="CODE" />
+      <Variable x:TypeArguments="x:String" Name="QUTTENCE" />
+      <Variable x:TypeArguments="x:String" Name="DU" />
+      <Variable x:TypeArguments="x:String" Name="AU" />
+      <Variable x:TypeArguments="x:String" Name="K" />
+      <Variable x:TypeArguments="x:String" Name="Solde" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Start Process" FileName="C:\Users\user\Downloads\fc olea code 246 (1).pdf" sap:VirtualizedContainerService.HintSize="433.6,88" sap2010:WorkflowViewState.IdRef="StartProcess_1" />
+    <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" CvMethod="[CVMethods.ElementDetection OR CVMethods.OCR]" DesignTimeCacheId="de01479b-d8a7-4c62-8246-35bcf5be419b" DisplayName="CV Screen Scope 'Qt5QWindowIcon'" sap:VirtualizedContainerService.HintSize="433.6,1248" sap2010:WorkflowViewState.IdRef="CVScope_2" Version="V5">
+      <p:CVScope.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <p:CvGetTextWithDescriptor Descriptor="[&quot;Target: AnyText (311,163,15,8)&quot; +&#xA;&quot;Anchor: Text 'Code' (277,151,20,8)&quot; +&#xA;&quot;Anchor: Text 'Intermediaire Branche' (328,151,84,9)&quot;]" DesignTimeCacheId="de01479b-d8a7-4c62-8246-35bcf5be419b" DesignTimeScaleFactor="1" DisplayName="CV Get Text - Any Text" sap:VirtualizedContainerService.HintSize="400,168" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_5" InformativeScreenshot="3df0ed10559598eb247e80f9dd5e157a" RefreshBefore="True" Result="[CODE]" Version="V5">
+              <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
+                <uc:CvDescriptor Id="fb46b6fc-4ad4-40fa-8ffd-1cdfed94c961">
+                  <uc:CvDescriptor.Anchors>
+                    <x:Array Type="uc:CvElementDescriptor">
+                      <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="277, 151, 20, 8" ElementType="Text" Text="Code" />
+                      <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="328, 151, 84, 9" ElementType="Text" Text="Intermediaire Branche" />
+                    </x:Array>
+                  </uc:CvDescriptor.Anchors>
+                  <uc:CvDescriptor.Target>
+                    <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="311, 163, 15, 8" ElementType="AnyText" />
+                  </uc:CvDescriptor.Target>
+                </uc:CvDescriptor>
+              </p:CvGetTextWithDescriptor.DesignTimeDescriptor>
+            </p:CvGetTextWithDescriptor>
+            <p:CvGetTextWithDescriptor Descriptor="[&quot;Target: AnyText (438,206,35,10)&quot; +&#xD;&#xA;&quot;Anchor: Text 'N¿Quittance Type Quittan Du' (412,191,144,13)&quot; +&#xD;&#xA;&quot;Anchor: Text 'Au' (605,192,15,10)&quot; +&#xD;&#xA;&quot;Anchor: Text 'C2' (476,206,12,10)&quot; +&#xD;&#xA;&quot;Anchor: Text 'N°Contrat' (285,190,48,9)&quot;]" DesignTimeCacheId="cc2037f4-5b59-4491-8017-f1c8fcb671a9" DesignTimeScaleFactor="1.25" DisplayName="CV Get Text - Any Text" sap:VirtualizedContainerService.HintSize="400,168" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_6" InformativeScreenshot="1758a69df6cdc410ef4f16e019eb6dbe" RefreshBefore="True" Result="[QUTTENCE]" Version="V5">
+              <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
+                <uc:CvDescriptor Id="10273442-a18f-4ccf-a6f9-c953bd54c7d0">
+                  <uc:CvDescriptor.Anchors>
+                    <x:Array Type="uc:CvElementDescriptor">
+                      <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="412, 191, 144, 13" ElementType="Text" Text="N¿Quittance Type Quittan Du" />
+                      <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="605, 192, 15, 10" ElementType="Text" Text="Au" />
+                      <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="476, 206, 12, 10" ElementType="Text" Text="C2" />
+                      <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="285, 190, 48, 9" ElementType="Text" Text="N°Contrat" />
+                    </x:Array>
+                  </uc:CvDescriptor.Anchors>
+                  <uc:CvDescriptor.Target>
+                    <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="438, 206, 35, 10" ElementType="AnyText" />
+                  </uc:CvDescriptor.Target>
+                </uc:CvDescriptor>
+              </p:CvGetTextWithDescriptor.DesignTimeDescriptor>
+            </p:CvGetTextWithDescriptor>
+            <p:CvGetTextWithDescriptor Descriptor="[&quot;Target: AnyWordGroup (548,206,55,12)&quot; +&#xD;&#xA;&quot;Anchor: Text '31/12/2021' (613,206,54,12)&quot; +&#xD;&#xA;&quot;Anchor: Text 'N¿Quittance Type Quittan Du' (412,191,144,13)&quot; +&#xD;&#xA;&quot;Anchor: Text 'Au' (605,192,15,10)&quot;]" DesignTimeCacheId="cc2037f4-5b59-4491-8017-f1c8fcb671a9" DesignTimeScaleFactor="1.25" DisplayName="CV Get Text - Any Word Group" sap:VirtualizedContainerService.HintSize="400,168" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_7" InformativeScreenshot="7bce83e6543e19e142c03e018bd26f82" RefreshBefore="True" Result="[DU]" Version="V5">
+              <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
+                <uc:CvDescriptor Id="e1c1760c-1366-4d4f-9f46-f25d984812d0">
+                  <uc:CvDescriptor.Anchors>
+                    <x:Array Type="uc:CvElementDescriptor">
+                      <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="613, 206, 54, 12" ElementType="Text" Text="31/12/2021" />
+                      <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="412, 191, 144, 13" ElementType="Text" Text="N¿Quittance Type Quittan Du" />
+                      <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="605, 192, 15, 10" ElementType="Text" Text="Au" />
+                    </x:Array>
+                  </uc:CvDescriptor.Anchors>
+                  <uc:CvDescriptor.Target>
+                    <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="548, 206, 55, 12" ElementType="AnyWordGroup" />
+                  </uc:CvDescriptor.Target>
+                </uc:CvDescriptor>
+              </p:CvGetTextWithDescriptor.DesignTimeDescriptor>
+            </p:CvGetTextWithDescriptor>
+            <p:CvGetTextWithDescriptor Descriptor="[&quot;Target: AnyText (690,164,44,9)&quot; +&#xA;&quot;Anchor: Text 'Au' (685,152,12,9)&quot; +&#xA;&quot;Anchor: Text 'Prime' (737,152,24,9)&quot;]" DesignTimeCacheId="de01479b-d8a7-4c62-8246-35bcf5be419b" DesignTimeScaleFactor="1" DisplayName="CV Get Text - Any Text" sap:VirtualizedContainerService.HintSize="400,168" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_8" InformativeScreenshot="1bc7a2b38bd6f3bf7e847f2a352230f5" RefreshBefore="True" Result="[AU]" Version="V5">
+              <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
+                <uc:CvDescriptor Id="6b508dcd-a1aa-418f-9ea9-b8b43f71aa27">
+                  <uc:CvDescriptor.Anchors>
+                    <x:Array Type="uc:CvElementDescriptor">
+                      <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="685, 152, 12, 9" ElementType="Text" Text="Au" />
+                      <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="737, 152, 24, 9" ElementType="Text" Text="Prime" />
+                    </x:Array>
+                  </uc:CvDescriptor.Anchors>
+                  <uc:CvDescriptor.Target>
+                    <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="690, 164, 44, 9" ElementType="AnyText" />
+                  </uc:CvDescriptor.Target>
+                </uc:CvDescriptor>
+              </p:CvGetTextWithDescriptor.DesignTimeDescriptor>
+            </p:CvGetTextWithDescriptor>
+            <p:CvGetTextWithDescriptor Descriptor="[&quot;Target: AnyWordGroup (746,252,53,12)&quot; +&#xD;&#xA;&quot;Anchor: Text 'SOLDE FC' (671,252,45,9)&quot;]" DesignTimeCacheId="cc2037f4-5b59-4491-8017-f1c8fcb671a9" DesignTimeScaleFactor="1.25" DisplayName="CV Get Text - Any Word Group" sap:VirtualizedContainerService.HintSize="400,168" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_9" InformativeScreenshot="9d62675689b27c5577adf3781f6b10b9" RefreshBefore="True" Result="[Solde]" Version="V5">
+              <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
+                <uc:CvDescriptor Id="3a36287f-0f0a-4262-9060-82ef11cb7c36">
+                  <uc:CvDescriptor.Anchors>
+                    <x:Array Type="uc:CvElementDescriptor">
+                      <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="671, 252, 45, 9" ElementType="Text" Text="SOLDE FC" />
+                    </x:Array>
+                  </uc:CvDescriptor.Anchors>
+                  <uc:CvDescriptor.Target>
+                    <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="746, 252, 53, 12" ElementType="AnyWordGroup" />
+                  </uc:CvDescriptor.Target>
+                </uc:CvDescriptor>
+              </p:CvGetTextWithDescriptor.DesignTimeDescriptor>
+            </p:CvGetTextWithDescriptor>
+          </Sequence>
+        </ActivityAction>
+      </p:CVScope.Body>
+      <p:CVScope.DesignTimeCache>
+        <uc:CVCache CvUiElements="{x:Null}" OcrTexts="{x:Null}" />
+      </p:CVScope.DesignTimeCache>
+      <p:CVScope.DesignTimeCacheContainer>
+        <uc:CvCacheContainer>
+          <uc:CvCacheContainer.Caches>
+            <scg:List x:TypeArguments="uc:CVCache" Capacity="4">
+              <uc:CVCache OcrTexts="{x:Null}" DisplayName="Screen CV Get Text - '' (Main)" Id="de01479b-d8a7-4c62-8246-35bcf5be419b" InformativeScreenshot="497e829627f2287ee1c45d61d197509c" LogicalPosition="57, 155" Position="57, 155" ScreenshotGuid="94db20ad-3c86-4463-9672-e1308ab26e08">
+                <uc:CVCache.CvAnchorRelations>
+                  <scg:List x:TypeArguments="uc:AnchorRelationInfo" Capacity="0" />
+                </uc:CVCache.CvAnchorRelations>
+                <uc:CVCache.CvUiElements>
+                  <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="0" />
+                </uc:CVCache.CvUiElements>
+              </uc:CVCache>
+              <uc:CVCache Dirty="All" DisplayName="Screen CV Get Text - ''" Id="cc2037f4-5b59-4491-8017-f1c8fcb671a9" InformativeScreenshot="e6f78caba3d4d70e88ce0a8d4e44e8fc" LogicalPosition="57, 155" OcrText="FC 4/246/2022 Tunis le 20/07/2022 103602 294259 Code Intermediaire Branche N°Contrat N¿Quittance Type Quittan Du Au Prime Encaissement Arriere Commission Souscripteur Annee Mois 246 OLEA TUNISIE GROUPE-MAL 2019701000068 690611 C2 01/01/2021 31/12/2021 85 084,651 0,000 85 084,651 7 596,576 AGENCE FONCIERE D HABITATION RETRAITES AFH 2021 12 SOLDE FC 85 084,651" Position="57, 155" ScaleFactor="1.25" ServerVersion="1">
+                <uc:CVCache.CvAnchorRelations>
+                  <scg:List x:TypeArguments="uc:AnchorRelationInfo" Capacity="0" />
+                </uc:CVCache.CvAnchorRelations>
+                <uc:CVCache.CvUiElements>
+                  <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="16">
+                    <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="475, 205, 15, 13" />
+                    <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="6, 222, 1223, 449" />
+                    <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="668, 188, 59, 61" />
+                    <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="1224, 191, 30, 23" />
+                    <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="662, 188, 68, 15" />
+                    <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="782, 204, 82, 16" />
+                    <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="665, 204, 64, 16" />
+                    <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="736, 207, 75, 43" />
+                    <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="604, 204, 66, 16" />
+                    <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="601, 188, 67, 16" />
+                    <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="527, 204, 79, 15" />
+                    <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="606, 189, 64, 35" />
+                    <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="1188, 192, 109, 19" />
+                    <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="1176, 204, 51, 16" />
+                    <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="727, 187, 35, 64" />
+                    <uc:CvElementInfo Category="Cell" Confidence="Runtime" Region="798, 187, 65, 16" />
+                  </scg:List>
+                </uc:CVCache.CvUiElements>
+                <uc:CVCache.OcrTexts>
+                  <scg:List x:TypeArguments="uc:OcrTextInfo" Capacity="64">
+                    <uc:OcrTextInfo Region="287, 109, 19, 14" Text="FC" />
+                    <uc:OcrTextInfo Region="308, 108, 91, 18" Text="4/246/2022" />
+                    <uc:OcrTextInfo Region="736, 116, 26, 10" Text="Tunis" />
+                    <uc:OcrTextInfo Region="764, 116, 10, 9" Text="le" />
+                    <uc:OcrTextInfo Region="774, 116, 56, 11" Text="20/07/2022" />
+                    <uc:OcrTextInfo Region="350, 132, 56, 15" Text="103602" />
+                    <uc:OcrTextInfo Region="349, 155, 57, 15" Text="294259" />
+                    <uc:OcrTextInfo Region="90, 190, 25, 9" Text="Code" />
+                    <uc:OcrTextInfo Region="156, 190, 64, 9" Text="Intermediaire" />
+                    <uc:OcrTextInfo Region="220, 190, 40, 10" Text="Branche" />
+                    <uc:OcrTextInfo Region="285, 190, 48, 9" Text="N°Contrat" />
+                    <uc:OcrTextInfo Region="412, 191, 58, 11" Text="N¿Quittance" />
+                    <uc:OcrTextInfo Region="476, 192, 24, 12" Text="Type" />
+                    <uc:OcrTextInfo Region="501, 192, 39, 11" Text="Quittan" />
+                    <uc:OcrTextInfo Region="541, 192, 15, 9" Text="Du" />
+                    <uc:OcrTextInfo Region="605, 192, 15, 10" Text="Au" />
+                    <uc:OcrTextInfo Region="672, 192, 28, 10" Text="Prime" />
+                    <uc:OcrTextInfo Region="737, 192, 64, 10" Text="Encaissement" />
+                    <uc:OcrTextInfo Region="802, 192, 35, 11" Text="Arriere" />
+                    <uc:OcrTextInfo Region="868, 193, 57, 9" Text="Commission" />
+                    <uc:OcrTextInfo Region="932, 193, 61, 11" Text="Souscripteur" />
+                    <uc:OcrTextInfo Region="1191, 193, 32, 10" Text="Annee" />
+                    <uc:OcrTextInfo Region="1256, 193, 24, 10" Text="Mois" />
+                    <uc:OcrTextInfo Region="133, 205, 19, 9" Text="246" />
+                    <uc:OcrTextInfo Region="156, 205, 24, 9" Text="OLEA" />
+                    <uc:OcrTextInfo Region="181, 205, 37, 9" Text="TUNISIE" />
+                    <uc:OcrTextInfo Region="220, 205, 63, 9" Text="GROUPE-MAL" />
+                    <uc:OcrTextInfo Region="285, 205, 74, 10" Text="2019701000068" />
+                    <uc:OcrTextInfo Region="438, 206, 35, 10" Text="690611" />
+                    <uc:OcrTextInfo Region="476, 206, 12, 10" Text="C2" />
+                    <uc:OcrTextInfo Region="548, 206, 55, 12" Text="01/01/2021" />
+                    <uc:OcrTextInfo Region="613, 206, 54, 12" Text="31/12/2021" />
+                    <uc:OcrTextInfo Region="681, 207, 12, 10" Text="85" />
+                    <uc:OcrTextInfo Region="695, 207, 39, 12" Text="084,651" />
+                    <uc:OcrTextInfo Region="772, 207, 28, 12" Text="0,000" />
+                    <uc:OcrTextInfo Region="812, 208, 12, 9" Text="85" />
+                    <uc:OcrTextInfo Region="825, 208, 39, 11" Text="084,651" />
+                    <uc:OcrTextInfo Region="884, 208, 6, 10" Text="7" />
+                    <uc:OcrTextInfo Region="891, 208, 38, 12" Text="596,576" />
+                    <uc:OcrTextInfo Region="932, 208, 40, 10" Text="AGENCE" />
+                    <uc:OcrTextInfo Region="973, 208, 46, 10" Text="FONCIERE" />
+                    <uc:OcrTextInfo Region="1022, 208, 8, 8" Text="D" />
+                    <uc:OcrTextInfo Region="1032, 208, 58, 9" Text="HABITATION" />
+                    <uc:OcrTextInfo Region="1092, 208, 49, 9" Text="RETRAITES" />
+                    <uc:OcrTextInfo Region="1143, 208, 20, 9" Text="AFH" />
+                    <uc:OcrTextInfo Region="1228, 208, 24, 9" Text="2021" />
+                    <uc:OcrTextInfo Region="1306, 208, 12, 10" Text="12" />
+                    <uc:OcrTextInfo Region="671, 252, 31, 9" Text="SOLDE" />
+                    <uc:OcrTextInfo Region="704, 252, 12, 9" Text="FC" />
+                    <uc:OcrTextInfo Region="746, 252, 13, 9" Text="85" />
+                    <uc:OcrTextInfo Region="760, 252, 39, 12" Text="084,651" />
+                  </scg:List>
+                </uc:CVCache.OcrTexts>
+              </uc:CVCache>
+            </scg:List>
+          </uc:CvCacheContainer.Caches>
+        </uc:CvCacheContainer>
+      </p:CVScope.DesignTimeCacheContainer>
+      <p:CVScope.OCREngine>
+        <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd:Rectangle, x:String))">
+          <ActivityFunc.Argument>
+            <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+          </ActivityFunc.Argument>
+          <p1:UiPathScreenOCR ApiKey="{x:Null}" Endpoint="{x:Null}" Output="{x:Null}" PredictionId="{x:Null}" Text="{x:Null}" UseLocalServer="{x:Null}" ComputeSkewAngle="False" ExtractWords="True" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="UiPathScreenOCR_3" Image="[Image]" Language="en" Profile="Screen" Scale="1" Timeout="100000" />
+        </ActivityFunc>
+      </p:CVScope.OCREngine>
+      <p:CVScope.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6f3ccb70-a8d6-49cf-9928-0471c72de172" InformativeScreenshot="a5b6f2acbc5d1311589f64876c788997" Selector="&lt;wnd app='wps.exe' cls='Qt5QWindowIcon' title='*.pdf - WPS Office' /&gt;&lt;wnd cls='Qt5QWindowIcon' title='PdfView' /&gt;" WaitForReady="INTERACTIVE">
+          <ui:Target.TimeoutMS>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:Target.TimeoutMS>
+        </ui:Target>
+      </p:CVScope.Target>
+      <p:CVScope.UseLocalServer>
+        <InArgument x:TypeArguments="x:Boolean" />
+      </p:CVScope.UseLocalServer>
+    </p:CVScope>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[CODE]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[QUTTENCE]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[DU]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[AU]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[Solde]" />
+  </Sequence>
+</Activity>
