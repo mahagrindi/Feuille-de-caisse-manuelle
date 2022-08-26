@@ -1,4 +1,3 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
 <Activity mc:Ignorable="sap sap2010" x:Class="GET_REF" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/cv" xmlns:p1="http://schemas.uipath.com/workflow/activities/ocr" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:sd1="clr-namespace:System.Data;assembly=System.Data" xmlns:uc="clr-namespace:UiPath.CV;assembly=UiPath.CV" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="IN_CODE" Type="InArgument(x:String)" />
@@ -8,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>862.4,4266.4</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1155.2,4624</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GET_REF_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="41">
@@ -98,7 +97,7 @@
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="GET_REF" sap:VirtualizedContainerService.HintSize="627.2,4201.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="GET_REF" sap:VirtualizedContainerService.HintSize="627.2,4559.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Default="0" Name="i" />
       <Variable x:TypeArguments="x:Int32" Default="0" Name="j" />
@@ -601,7 +600,7 @@
         </ui:Target>
       </ui:ClickImage.Target>
     </ui:ClickImage>
-    <Sequence sap:VirtualizedContainerService.HintSize="585.6,2480.8" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence sap:VirtualizedContainerService.HintSize="585.6,2642.4" sap2010:WorkflowViewState.IdRef="Sequence_4">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -622,7 +621,7 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Button (9,27,76,38)&quot; +&#xD;&#xA;&quot;Anchor: Icon (36,27,20,19)&quot; +&#xD;&#xA;&quot;Anchor: Text 'Rechercher' (16,47,60,12)&quot;]" DesignTimeCacheId="fc04f196-b6fc-42d5-ab4f-3d8f44e9de82" DesignTimeScaleFactor="1" DisplayName="CV Click - Button" sap:VirtualizedContainerService.HintSize="510.4,137.6" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_5" InformativeScreenshot="b6608edfc4dfc2396ff9316263590133" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V5">
+              <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Button (9,27,76,38)&quot; +&#xA;&quot;Anchor: Icon (36,27,20,19)&quot; +&#xA;&quot;Anchor: Text 'Rechercher' (16,47,60,12)&quot;]" DesignTimeCacheId="fc04f196-b6fc-42d5-ab4f-3d8f44e9de82" DesignTimeScaleFactor="1" DisplayName="CV Click - Button" sap:VirtualizedContainerService.HintSize="510.4,137.6" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_5" InformativeScreenshot="b6608edfc4dfc2396ff9316263590133" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V5">
                 <p:CvClickWithDescriptor.CursorPosition>
                   <ui:CursorPosition Position="Center">
                     <ui:CursorPosition.OffsetX>
@@ -1812,5 +1811,30 @@
         <OutArgument x:TypeArguments="x:Int32" x:Key="ORDER">[OUT_Order]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
+    <ui:ClickImage ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Image 'wfica32.exe Recherche'" sap:VirtualizedContainerService.HintSize="585.6,156" sap2010:WorkflowViewState.IdRef="ClickImage_4" KeyModifiers="None" MouseButton="BTN_LEFT">
+      <ui:ClickImage.CursorPosition>
+        <ui:CursorPosition Position="Center">
+          <ui:CursorPosition.OffsetX>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:CursorPosition.OffsetX>
+          <ui:CursorPosition.OffsetY>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:CursorPosition.OffsetY>
+        </ui:CursorPosition>
+      </ui:ClickImage.CursorPosition>
+      <ui:ClickImage.Image>
+        <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="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" />
+      </ui:ClickImage.Image>
+      <ui:ClickImage.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="84b04a8a-3310-456c-87e1-ff4ae31726b0" Selector="&lt;wnd app='wfica32.exe' cls='Transparent Windows Client' title='Recherche Multicritère Bordereau d&amp;apos;envoi - \\Remote' /&gt;">
+          <ui:Target.TimeoutMS>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:Target.TimeoutMS>
+          <ui:Target.WaitForReady>
+            <InArgument x:TypeArguments="ui:WaitForReady" />
+          </ui:Target.WaitForReady>
+        </ui:Target>
+      </ui:ClickImage.Target>
+    </ui:ClickImage>
   </Sequence>
 </Activity>

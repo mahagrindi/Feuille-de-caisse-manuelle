@@ -1,6 +1,6 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="PDF_TUNISIE_COURTAGE_SCRAPING" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1060,1992" sap2010:WorkflowViewState.IdRef="PDF_TUNISIE_COURTAGE_SCRAPING_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/cv" xmlns:p1="http://schemas.uipath.com/workflow/activities/ocr" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:uc="clr-namespace:UiPath.CV;assembly=UiPath.CV" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="PDF_TUNISIE_COURTAGE_SCRAPING" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1155.2,2488" sap2010:WorkflowViewState.IdRef="PDF_TUNISIE_COURTAGE_SCRAPING_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/cv" xmlns:p1="http://schemas.uipath.com/workflow/activities/ocr" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:sd1="clr-namespace:System.Data;assembly=System.Data" xmlns:uc="clr-namespace:UiPath.CV;assembly=UiPath.CV" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="32">
+    <scg:List x:TypeArguments="x:String" Capacity="34">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -33,10 +33,12 @@
       <x:String>System.Reflection</x:String>
       <x:String>System.Runtime.InteropServices</x:String>
       <x:String>UiPath.CV.Activities.Interfaces</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="30">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="36">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -67,21 +69,27 @@
       <AssemblyReference>UiPath.Word.Activities</AssemblyReference>
       <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
       <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="PDF_TUNISIE_COURTAGE_SCRAPING" sap:VirtualizedContainerService.HintSize="475.2,1927.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="PDF_TUNISIE_COURTAGE_SCRAPING" sap:VirtualizedContainerService.HintSize="475.2,2423.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="REF" />
       <Variable x:TypeArguments="x:Int32" Name="SOLDE" />
       <Variable x:TypeArguments="x:String" Name="RS" />
+      <Variable x:TypeArguments="x:String" Name="Du" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Start Process" FileName="C:\Users\user\Downloads\FC TUNISIE COURTAGE CODE 207 (1).pdf" sap:VirtualizedContainerService.HintSize="433.6,88" sap2010:WorkflowViewState.IdRef="StartProcess_1" />
-    <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="1a525b51-6b6c-4c78-8003-7642883a14d6" DisplayName="CV Screen Scope 'Qt5QWindowIcon'" sap:VirtualizedContainerService.HintSize="433.6,1308" sap2010:WorkflowViewState.IdRef="CVScope_1" Version="V5">
+    <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" Server="{x:Null}" CvMethod="ElementDetection, OCR" DesignTimeCacheId="1a525b51-6b6c-4c78-8003-7642883a14d6" DisplayName="CV Screen Scope 'Qt5QWindowIcon'" sap:VirtualizedContainerService.HintSize="433.6,1778.4" sap2010:WorkflowViewState.IdRef="CVScope_1" Version="V5">
       <p:CVScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -93,8 +101,9 @@
               <Variable x:TypeArguments="x:String" Name="st" />
               <Variable x:TypeArguments="x:Int32" Name="s" />
               <Variable x:TypeArguments="x:Int32" Name="p" />
+              <Variable x:TypeArguments="sd1:DataTable" Name="tb" />
             </Sequence.Variables>
-            <p:CvGetTextWithDescriptor Descriptor="[&quot;Target: AnyText (647,76,72,16)&quot; +&#xD;&#xA;&quot;Anchor: Text 'Feuille de Caisse:' (500,76,143,15)&quot;]" DesignTimeCacheId="1a525b51-6b6c-4c78-8003-7642883a14d6" DesignTimeScaleFactor="1.25" DisplayName="CV Get Text - Any Text" sap:VirtualizedContainerService.HintSize="400,168" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_1" InformativeScreenshot="4eb91ca48c7ac849ede19c2066de1a44" RefreshBefore="True" Result="[REF]" Version="V5">
+            <p:CvGetTextWithDescriptor Descriptor="[&quot;Target: AnyText (647,76,72,16)&quot; +&#xA;&quot;Anchor: Text 'Feuille de Caisse:' (500,76,143,15)&quot;]" DesignTimeCacheId="1a525b51-6b6c-4c78-8003-7642883a14d6" DesignTimeScaleFactor="1.25" DisplayName="CV Get Text - Any Text" sap:VirtualizedContainerService.HintSize="400,168" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_1" InformativeScreenshot="4eb91ca48c7ac849ede19c2066de1a44" RefreshBefore="True" Result="[REF]" Version="V5">
               <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
                 <uc:CvDescriptor Id="da53d619-ef34-467f-889d-896dc552b11a">
                   <uc:CvDescriptor.Anchors>
@@ -108,7 +117,7 @@
                 </uc:CvDescriptor>
               </p:CvGetTextWithDescriptor.DesignTimeDescriptor>
             </p:CvGetTextWithDescriptor>
-            <p:CvGetTextWithDescriptor Descriptor="[&quot;Target: TableCell (41,252,1321,147)&quot; +&#xD;&#xA;&quot;ColumnName: Primes totales (534,252,117,42)&quot; +&#xD;&#xA;&quot;RowContains: Totaux (41,376,160,23) RowCell: 1&quot;]" DesignTimeCacheId="1a525b51-6b6c-4c78-8003-7642883a14d6" DesignTimeScaleFactor="1.25" DisplayName="CV Get Text - Table Cell" sap:VirtualizedContainerService.HintSize="400,168" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_2" InformativeScreenshot="2adec2c3fdabeffc912e64043f4d8990" RefreshBefore="True" Result="[pr]" Version="V5">
+            <p:CvGetTextWithDescriptor Descriptor="[&quot;Target: TableCell (41,252,1321,147)&quot; +&#xA;&quot;ColumnName: Primes totales (534,252,117,42)&quot; +&#xA;&quot;RowContains: Totaux (41,376,160,23) RowCell: 1&quot;]" DesignTimeCacheId="1a525b51-6b6c-4c78-8003-7642883a14d6" DesignTimeScaleFactor="1.25" DisplayName="CV Get Text - Table Cell" sap:VirtualizedContainerService.HintSize="400,168" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_2" InformativeScreenshot="2adec2c3fdabeffc912e64043f4d8990" RefreshBefore="True" Result="[pr]" Version="V5">
               <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
                 <uc:CvDescriptor Id="763ff691-5553-4df0-bc58-3c1747f1ee46">
                   <uc:CvDescriptor.Target>
@@ -121,7 +130,7 @@
                 </uc:CvDescriptor>
               </p:CvGetTextWithDescriptor.DesignTimeDescriptor>
             </p:CvGetTextWithDescriptor>
-            <p:CvGetTextWithDescriptor Descriptor="[&quot;Target: TableCell (41,252,1321,147)&quot; +&#xD;&#xA;&quot;ColumnName: Stat-COU (911,252,128,42)&quot; +&#xD;&#xA;&quot;RowContains: Totaux (41,376,160,23) RowCell: 1&quot;]" DesignTimeCacheId="1a525b51-6b6c-4c78-8003-7642883a14d6" DesignTimeScaleFactor="1.25" DisplayName="CV Get Text - Table Cell" sap:VirtualizedContainerService.HintSize="400,168" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_4" InformativeScreenshot="9aa38af0d53c95c5b68e682d7e096075" RefreshBefore="True" Result="[st]" Version="V5">
+            <p:CvGetTextWithDescriptor Descriptor="[&quot;Target: TableCell (41,252,1321,147)&quot; +&#xA;&quot;ColumnName: Stat-COU (911,252,128,42)&quot; +&#xA;&quot;RowContains: Totaux (41,376,160,23) RowCell: 1&quot;]" DesignTimeCacheId="1a525b51-6b6c-4c78-8003-7642883a14d6" DesignTimeScaleFactor="1.25" DisplayName="CV Get Text - Table Cell" sap:VirtualizedContainerService.HintSize="400,168" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_4" InformativeScreenshot="9aa38af0d53c95c5b68e682d7e096075" RefreshBefore="True" Result="[st]" Version="V5">
               <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
                 <uc:CvDescriptor Id="763ff691-5553-4df0-bc58-3c1747f1ee46">
                   <uc:CvDescriptor.Target>
@@ -134,7 +143,7 @@
                 </uc:CvDescriptor>
               </p:CvGetTextWithDescriptor.DesignTimeDescriptor>
             </p:CvGetTextWithDescriptor>
-            <p:CvGetTextWithDescriptor Descriptor="[&quot;Target: AnyText (402,443,59,16)&quot; +&#xD;&#xA;&quot;Anchor: Text 'DT' (464,443,23,14)&quot; +&#xD;&#xA;&quot;Anchor: Text 'Retenu = 1 028,391' (185,442,145,17)&quot;]" DesignTimeCacheId="6109fb5e-0059-41fb-b1aa-8b327f9bd91c" DesignTimeScaleFactor="1.25" DisplayName="CV Get Text - Any Text" sap:VirtualizedContainerService.HintSize="400,168" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_3" InformativeScreenshot="bb2e16adb0ee3d23f312928129c76244" RefreshBefore="True" Result="[RS]" Version="V5">
+            <p:CvGetTextWithDescriptor Descriptor="[&quot;Target: AnyText (402,443,59,16)&quot; +&#xA;&quot;Anchor: Text 'DT' (464,443,23,14)&quot; +&#xA;&quot;Anchor: Text 'Retenu = 1 028,391' (185,442,145,17)&quot;]" DesignTimeCacheId="6109fb5e-0059-41fb-b1aa-8b327f9bd91c" DesignTimeScaleFactor="1.25" DisplayName="CV Get Text - Any Text" sap:VirtualizedContainerService.HintSize="400,168" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_3" InformativeScreenshot="bb2e16adb0ee3d23f312928129c76244" RefreshBefore="True" Result="[RS]" Version="V5">
               <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
                 <uc:CvDescriptor Id="d339bc99-1316-4498-bbe5-ad97fc9dfab7">
                   <uc:CvDescriptor.Anchors>
@@ -173,9 +182,36 @@
                 <InArgument x:TypeArguments="x:Int32">[p - s]</InArgument>
               </Assign.Value>
             </Assign>
+            <p:CvGetTextWithDescriptor Descriptor="[&quot;Target: AnyText (437,186,67,12)&quot; +&#xD;&#xA;&quot;Anchor: Text 'Releve des encaissements du' (252,185,181,13)&quot;]" DesignTimeCacheId="6109fb5e-0059-41fb-b1aa-8b327f9bd91c" DesignTimeScaleFactor="1.25" DisplayName="CV Get Text - Any Text" sap:VirtualizedContainerService.HintSize="400,168" sap2010:WorkflowViewState.IdRef="CvGetTextWithDescriptor_5" InformativeScreenshot="c49d9e89ceefb8960d30fc93576f4dcf" RefreshBefore="True" Result="[Du]" Version="V5">
+              <p:CvGetTextWithDescriptor.DesignTimeDescriptor>
+                <uc:CvDescriptor Id="74c1d99f-8b32-49eb-820a-a708eab2b257">
+                  <uc:CvDescriptor.Anchors>
+                    <x:Array Type="uc:CvElementDescriptor">
+                      <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="252, 185, 181, 13" ElementType="Text" Text="Releve des encaissements du" />
+                    </x:Array>
+                  </uc:CvDescriptor.Anchors>
+                  <uc:CvDescriptor.Target>
+                    <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="437, 186, 67, 12" ElementType="AnyText" />
+                  </uc:CvDescriptor.Target>
+                </uc:CvDescriptor>
+              </p:CvGetTextWithDescriptor.DesignTimeDescriptor>
+            </p:CvGetTextWithDescriptor>
+            <p:CvExtractDataTableWithDescriptor InRegion="{x:Null}" Scroll="{x:Null}" AddHeaders="True" DelayScreenshotAfterScroll="250" Descriptor="[&quot;Target: Table (180,285,1048,117)&quot;]" DesignTimeCacheId="6109fb5e-0059-41fb-b1aa-8b327f9bd91c" DesignTimeScaleFactor="1.25" DisplayName="CV Extract Table - Table" sap:VirtualizedContainerService.HintSize="400,137.6" sap2010:WorkflowViewState.IdRef="CvExtractDataTableWithDescriptor_1" IgnoreEmptyRows="False" InformativeScreenshot="8aaf7ae9df5e1fef1b49aef2e54131f3" MaxTableScrollHeightInPixels="30000" RefreshBefore="True" Result="[tb]" Version="V5">
+              <p:CvExtractDataTableWithDescriptor.DesignTimeDescriptor>
+                <uc:CvDescriptor Id="29ed4632-5462-4070-b4c1-565f8fdd70ce">
+                  <uc:CvDescriptor.Target>
+                    <uc:CvElementDescriptor CellExtraInfo="{x:Null}" DesignTimeArea="180, 285, 1048, 117" ElementType="Table" />
+                  </uc:CvDescriptor.Target>
+                </uc:CvDescriptor>
+              </p:CvExtractDataTableWithDescriptor.DesignTimeDescriptor>
+            </p:CvExtractDataTableWithDescriptor>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="400,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;c&quot;]" />
           </Sequence>
         </ActivityAction>
       </p:CVScope.Body>
+      <p:CVScope.DesignTimeCache>
+        <uc:CVCache CvUiElements="{x:Null}" OcrTexts="{x:Null}" />
+      </p:CVScope.DesignTimeCache>
       <p:CVScope.DesignTimeCacheContainer>
         <uc:CvCacheContainer>
           <uc:CvCacheContainer.Caches>
@@ -800,7 +836,7 @@
         </ActivityFunc>
       </p:CVScope.OCREngine>
       <p:CVScope.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d8930718-d667-4d33-a687-4caa439987c0" InformativeScreenshot="8be146d291a4e5b94d77de40ae81545b" Selector="&lt;wnd app='wps.exe' cls='Qt5QWindowIcon' title='FC TUNISIE COURTAGE CODE 207 (1).pdf - WPS Office' /&gt;&lt;wnd cls='Qt5QWindowIcon' title='PdfView' /&gt;" WaitForReady="INTERACTIVE">
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d8930718-d667-4d33-a687-4caa439987c0" InformativeScreenshot="8be146d291a4e5b94d77de40ae81545b" Selector="&lt;wnd app='wps.exe' cls='Qt5QWindowIcon' title='*TUNISIE COURTAGE*' /&gt;&lt;wnd cls='Qt5QWindowIcon' title='PdfView' /&gt;" WaitForReady="INTERACTIVE">
           <ui:Target.TimeoutMS>
             <InArgument x:TypeArguments="x:Int32" />
           </ui:Target.TimeoutMS>
@@ -813,5 +849,20 @@
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[REF]" />
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[SOLDE]" />
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[rs]" />
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Main workflow" sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Main.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InOutArgument x:TypeArguments="x:String" x:Key="Name" />
+        <InArgument x:TypeArguments="x:String" x:Key="IN_CONDE">
+          <Literal x:TypeArguments="x:String">207</Literal>
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="IN_SOLDE">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="SOLDE.ToString" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="IN_DU" />
+        <InArgument x:TypeArguments="x:String" x:Key="IN_AU" />
+        <InArgument x:TypeArguments="x:String" x:Key="IN_REF" />
+        <InArgument x:TypeArguments="x:String" x:Key="IN_Quittence" />
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
   </Sequence>
 </Activity>
